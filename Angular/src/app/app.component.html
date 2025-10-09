@@ -1,3 +1,6 @@
 <div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+  <dx-switch
+    [(value)]="switchValue"
+    (onValueChanged)="onValueChanged($event)"
+  ></dx-switch>
 </div>

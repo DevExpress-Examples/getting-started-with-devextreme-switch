@@ -15,12 +15,15 @@ This repository stores the code examples of the Switch component for the [Gettin
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
+    - [app.module.ts](Angular/src/app/app.module.ts)
 - **jQuery**
     - [index.js](jQuery/src/index.js)
+    - [index.html](jQuery/src/index.html)
 - **React**
-    - [App.js](React/src/App.js)
+    - [App.tsx](React/src/App.tsx)
 - **Vue**
     - [App.vue](Vue/src/App.vue)
+    - [SwitchContent.vue](Vue/src/components/SwitchContent.vue)
 
 ## Documentation
 

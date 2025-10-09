@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import notify from 'devextreme/ui/notify';
+import { DxSwitchTypes } from 'devextreme-angular/ui/switch';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,10 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  switchValue = true;
 
-  counter = 0;
-
-  buttonText = 'Click count: 0';
-
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  onValueChanged(e: DxSwitchTypes.ValueChangedEvent): void {
+    const message = e.value ? 'Switch is ON' : 'Switch is OFF';
+    notify(message, 'info', 1000);
   }
 }

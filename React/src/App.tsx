@@ -1,16 +1,22 @@
 import { useCallback, useState } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import Switch from 'devextreme-react/switch';
+import notify from 'devextreme/ui/notify';
+import type { SwitchTypes } from 'devextreme-react/switch';
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
+  const [switchValue, setSwitchValue] = useState<boolean>(true);
+
+  const onValueChanged = useCallback((e: SwitchTypes.ValueChangedEvent) => {
+    setSwitchValue(e.value ?? false);
+    const message = e.value ? 'Switch is ON' : 'Switch is OFF';
+    notify(message, 'info', 1000);
+  }, []);
+
   return (
     <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+      <Switch value={switchValue} onValueChanged={onValueChanged} />
     </div>
   );
 }

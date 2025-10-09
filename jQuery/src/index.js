@@ -1,10 +1,9 @@
 $(() => {
-  let count = 0;
-  $('#btn').dxButton({
-    text: `Click count: ${count}`,
-    onClick(e) {
-      count += 1;
-      e.component.option('text', `Click count: ${count}`);
+  $('#switch').dxSwitch({
+    value: true,
+    onValueChanged(e) {
+      const message = e.value ? 'Switch is ON' : 'Switch is OFF';
+      DevExpress.ui.notify(message, 'info', 1000);
     },
   });
 });
